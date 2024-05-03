@@ -43,3 +43,18 @@ ExecStart=sudo /home/alej/Documentos/Tarea_Node/deployment.sh
 [Install]
 WantedBy=multi-user.target
 ```
+3. Crear el archivo hello_world_deploy.timer en /lib/systemd/system con `sudo touch /lib/systemd/system/hello_world_deploy.timer`
+4. Editar el archivo hello_world_deploy.timer con `sudo nano /lib/systemd/system/hello_world_deploy.timer` y agregar lo siguiente:
+```
+[Unit]
+Description=Run hello_world_deploy.service every 1 minute
+
+[Timer]
+OnUnitActiveSec=1m
+Unit=hello_world_deploy.service
+
+[Install]
+WantedBy=timers.target
+```
+5. Habilitar el servicio con `sudo systemctl enable hello_world_deploy.timer`
+6. Reiniciar el servicio con `sudo systemctl restart hello_world_deploy.timer`
