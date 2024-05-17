@@ -50,7 +50,7 @@ WantedBy=multi-user.target
 Description=Run hello_world_deploy.service every 10 seconds
 
 [Timer]
-OnUnitActiveSec=1m
+OnUnitActiveSec=10s
 Unit=hello_world_deploy.service
 
 [Install]
