@@ -8,5 +8,5 @@ git fetch origin
 if [ -n "$(git diff --name-only origin/Deployment)" ]; then
   git pull origin Deployment
   echo "Restarting server."
-  sudo systemctl restart hello_world.service
+  systemctl restart hello_world.service
 fi
