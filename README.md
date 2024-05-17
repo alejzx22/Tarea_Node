@@ -47,7 +47,7 @@ WantedBy=multi-user.target
 4. Editar el archivo hello_world_deploy.timer con `sudo nano /lib/systemd/system/hello_world_deploy.timer` y agregar lo siguiente:
 ```
 [Unit]
-Description=Run hello_world_deploy.service every 1 minute
+Description=Run hello_world_deploy.service every 10 seconds
 
 [Timer]
 OnUnitActiveSec=1m
